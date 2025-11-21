@@ -6,6 +6,12 @@ TIS3IL – University Project (Deadline: 31.12.)
 
 Nr of Members: 3
 
+**CB** - preprocessing, baseline, statsmodels
+
+**AS** - ml-models, visualizations
+
+**SK** - neural-models, errors, splitting
+
 ---
 
 ## Project Overview
@@ -33,43 +39,42 @@ TIS3IL-WS25-PROJECT
 ├── .venv/
 │
 ├── code/
-│   ├── test.ipynb
 │   ├── 01-data-prep.ipynb
 │   ├── 02-baseline.ipynb
-│   ├── 03-ml-models.ipynb
-│   ├── 04-neural-models.ipynb
-│   └── 05-evaluation-visualization.ipynb
+│   ├── 02-ml-models.ipynb
+│   ├── 02-neural-models.ipynb
+│   ├── 02-stats-models.ipynb
+│   ├── 03-visualization.ipynb
+│   ├── metrics.ipynb
+│   ├── splitting.ipynb
+│   └── test.ipynb
 │
 ├── data/
-│   ├── raw/
-│   │   ├── placeholder.txt
+│   ├── models/
+│   │   ├── baseline_results.csv
+│   │   ├── ml_models_results.csv
+│   │   ├── neural_models_results.csv
+│   │   └── statsmodels_results.csv
 │   │
-│   ├── processed/
-│   │   ├── placeholder.txt
+│   └── processed/
+│       └── data.csv
 │
 ├── docs/
-│   ├── visualizations/
-│   │   ├── placeholder.png
-│   │
 │   ├── reports/
-│   │   ├── doc_preprocessing.md
+│   │   ├── presentation/
+│   │   │   └── slides.pptx
 │   │   ├── doc_models.md
+│   │   ├── doc_preprocessing.md
 │   │   ├── doc_visualizations.md
-│   │   ├── summary.md
-│   │   └── presentation/
-│   │       └── slides.pptx
+│   │   └── summary.md
 │   │
-│   ├── doc_preprocessing.md
-│   └── README.md
+│   └── visualizations/
+│       └── placeholder.txt
 │
 ├── .gitignore
-│
 ├── .python-version
-│
 ├── pyproject.toml
-│
 ├── README.md
-│
 └── uv.lock
 ```
 
@@ -159,7 +164,7 @@ git checkout -b <feature-name>
 [FirstLetterOfFirstName][FirstLetterOfLastName]-[FeatureAdded]
 
 
-EXAMPLE: CB-Preprocessing or AS--Visualizations
+EXAMPLE: CB-Preprocessing or AS-Visualizations
 
 ### First push
 ```bash
