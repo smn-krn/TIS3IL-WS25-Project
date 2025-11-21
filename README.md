@@ -154,6 +154,13 @@ git checkout -b <feature-name>
 
 -b means: create and switch to the new branch.
 
+**Naming convention:** 
+
+[FirstLetterOfFirstName][FirstLetterOfLastName]-[FeatureAdded]
+
+
+EXAMPLE: CB-Preprocessing or AS--Visualizations
+
 ### First push
 ```bash
 git push -u origin <feature-name> 
