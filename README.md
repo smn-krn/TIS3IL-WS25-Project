@@ -112,10 +112,113 @@ git clone https://github.com/smn-krn/TIS3IL-WS25-Project.git
 cd TIS3IL-WS25-Project
 ```
 
-### Install dependencies using UV
-```bash
-uv sync
-```
+### Project Dependencies & Environment Setup (using uv)
+
+This project uses `uv` + `pyproject.toml` to manage Python dependencies.
+Unlike pip or conda, uv supports dependency groups, which allow us to install only what we need for each part of the project (baseline models, ML models, neural models, visualizations, etc.).
+
+This keeps environments small, fast, conflict-free, and makes collaboration easier.
+
+------------------------------------------------------------
+1. Installing Dependencies
+------------------------------------------------------------
+
+Install only the base dependencies (recommended for general users):
+
+    uv sync
+
+This installs only what is defined under:
+
+    [project]
+    dependencies = [...]
+
+------------------------------------------------------------
+Install dependencies for a specific model family
+------------------------------------------------------------
+
+ML models:
+
+    uv sync --group ml
+
+Neural forecasting models (PyTorch + NeuralForecast + TiReX):
+
+    uv sync --group neural
+
+Classical statistical models:
+
+    uv sync --group stats
+
+Developer tools (testing, formatting, linting):
+
+    uv sync --group dev
+
+------------------------------------------------------------
+Install multiple dependency groups
+------------------------------------------------------------
+
+    uv sync --group ml --group neural
+
+------------------------------------------------------------
+Install everything (not recommended unless necessary)
+------------------------------------------------------------
+
+    uv sync --all-groups
+
+------------------------------------------------------------
+2. Adding New Dependencies
+------------------------------------------------------------
+
+Dependencies are tracked inside pyproject.toml.
+
+Add a package to the base dependencies:
+
+    uv add pandas
+
+Add a package to a specific group:
+
+Example: add Prophet to stats models:
+
+    uv add prophet --group stats
+
+Example: add TorchMetrics to neural models:
+
+    uv add torchmetrics --group neural
+
+Example: add Jupyter extensions to dev tools:
+
+    uv add black ruff --group dev
+
+------------------------------------------------------------
+3. Checking Installed Packages
+------------------------------------------------------------
+
+List everything currently installed:
+
+    uv pip list
+
+See which groups are available:
+
+    uv tree
+
+------------------------------------------------------------
+Summary Table
+------------------------------------------------------------
+
+Task                                 | Command
+------------------------------------ | -----------------------------------------------
+Install base deps                    | uv sync
+Install ML deps                      | uv sync --group ml
+Install neural deps                  | uv sync --group neural
+Install stats deps                   | uv sync --group stats
+Install dev tools                    | uv sync --group dev
+Add package to base                  | uv add PACKAGE
+Add package to a group               | uv add PACKAGE --group GROUPNAME
+Install multiple groups              | uv sync --group GROUP1 --group GROUP2
+
+------------------------------------------------------------
+End of file
+------------------------------------------------------------
+
 
 We are using Python **3.12.11**
 
