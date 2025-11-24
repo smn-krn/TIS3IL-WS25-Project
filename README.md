@@ -148,10 +148,6 @@ Classical statistical models:
 
     uv sync --group stats
 
-Developer tools (testing, formatting, linting):
-
-    uv sync --group dev
-
 ------------------------------------------------------------
 Install multiple dependency groups
 ------------------------------------------------------------
@@ -165,7 +161,7 @@ Install everything (not recommended unless necessary)
     uv sync --all-groups
 
 ------------------------------------------------------------
-2. Adding New Dependencies
+1. Adding New Dependencies
 ------------------------------------------------------------
 
 Dependencies are tracked inside pyproject.toml.
