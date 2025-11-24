@@ -14,7 +14,7 @@ Nr of Members: 3
 
 ---
 
-## Project Overview
+# Project Overview
 This repository contains our full workflow for a university project on time series forecasting.  
 The objective is to download, clean, and forecast daily weather indicators (temperature, precipitation, wind speed, etc.) using the Meteostat Daily Bulk API:
 
@@ -81,7 +81,7 @@ TIS3IL-WS25-PROJECT
 
 ---
 
-## Dataset — Meteostat Daily Weather Data
+# Dataset — Meteostat Daily Weather Data
 
 We use the Meteostat Daily Bulk dataset, which provides:
 
@@ -104,15 +104,15 @@ We will select one or several stations for the project, depending on coverage an
 
 ---
 
-## Setup Instructions
+# Setup Instructions
 
-### Clone the repository
+## Clone the repository
 ```bash
 git clone https://github.com/smn-krn/TIS3IL-WS25-Project.git
 cd TIS3IL-WS25-Project
 ```
 
-### Project Dependencies & Environment Setup (using uv)
+## Project Dependencies & Environment Setup (using uv)
 
 This project uses `uv` + `pyproject.toml` to manage Python dependencies.
 Unlike pip or conda, uv supports dependency groups, which allow us to install only what we need for each part of the project (baseline models, ML models, neural models, visualizations, etc.).
@@ -148,6 +148,10 @@ Classical statistical models:
 
     uv sync --group stats
 
+Visualizations:
+
+    uv sync --group viz
+
 ------------------------------------------------------------
 Install multiple dependency groups
 ------------------------------------------------------------
@@ -180,12 +184,12 @@ Example: add TorchMetrics to neural models:
 
     uv add torchmetrics --group neural
 
-Example: add Jupyter extensions to dev tools:
+Example: add seaborn extensions to viz tools:
 
-    uv add black ruff --group dev
+    uv add seaborn ruff --group viz
 
 ------------------------------------------------------------
-3. Checking Installed Packages
+1. Checking Installed Packages
 ------------------------------------------------------------
 
 List everything currently installed:
@@ -206,13 +210,12 @@ Install base deps                    | uv sync
 Install ML deps                      | uv sync --group ml
 Install neural deps                  | uv sync --group neural
 Install stats deps                   | uv sync --group stats
-Install dev tools                    | uv sync --group dev
+Install viz tools                    | uv sync --group viz
 Add package to base                  | uv add PACKAGE
 Add package to a group               | uv add PACKAGE --group GROUPNAME
 Install multiple groups              | uv sync --group GROUP1 --group GROUP2
 
-------------------------------------------------------------
-End of file
+
 ------------------------------------------------------------
 
 
@@ -220,22 +223,14 @@ We are using Python **3.12.11**
 
 So the nixtla libraries will hopefully not be an issue.
 
-**That is all you need to do!** Cheat-Sheet is just in case.
+**That is all you need to do for the setup!**
 
-### uv cheat-sheet
-| Command                 | Purpose                             |
-| ----------------------- | ----------------------------------- |
-| `uv --version`          | Check if uv is installed            |
-| `uv init`               | Create a new Python project with uv **DON'T DO THIS WHEN CLONING THE REPOSITORY** |
-| `uv venv`               | Create a .venv manually             |
-| `uv add <pkg>`          | Install a package                   |
-| `uv run python file.py` | Run inside the environment          |
 
-## Branch Instructions
+# Branch Instructions
 
 Make sure you are in the project folder.
 
-### Check current branch
+## Check current branch
 ```bash
 git branch
 ```
@@ -246,12 +241,12 @@ if you're not on main (so if * is on a different branch), switch via
 git checkout main
 ```
 
-### Pull the latest changes from origin
+## Pull the latest changes from origin
 ```bash
 git pull origin main
 ```
 
-### Create a new feature branch
+## Create a new feature branch
 ```bash
 git checkout -b <feature-name>
 ```
@@ -265,14 +260,14 @@ git checkout -b <feature-name>
 
 EXAMPLE: CB-Preprocessing or AS-Visualizations
 
-### First push
+## First push
 ```bash
 git push -u origin <feature-name> 
 ```
 
 Do this before any changes, because the very first push requires special handling using the "-u origin" feature. 
 
-### All further pushes
+## All further pushes
 
 After this, you can treat it normally using 
 ```bash 
@@ -281,7 +276,7 @@ git commit -m "Message"
 git push
 ```
 
-### Merging
+## Merging
 
 Merge via github website
 
@@ -298,7 +293,7 @@ If it doesn't
 
 Should be able to switch without merging conflicts. If you have merging conflicts... pray.
 
-### Switching to main
+## Switching to main
 
 We first need to pull this from the repo so that we have this merge locally.
 
