@@ -3255,6 +3255,7 @@ dependencies = [
     { name = "pandas" },
     { name = "pathlib" },
     { name = "plotly" },
+    { name = "scikit-learn" },
     { name = "seaborn" },
 ]
 
@@ -3289,6 +3290,7 @@ requires-dist = [
     { name = "pandas", specifier = ">=2.3.3" },
     { name = "pathlib", specifier = ">=1.0.1" },
     { name = "plotly", specifier = ">=6.5.0" },
+    { name = "scikit-learn", specifier = ">=1.7.2" },
     { name = "seaborn", specifier = ">=0.13.2" },
 ]
 
