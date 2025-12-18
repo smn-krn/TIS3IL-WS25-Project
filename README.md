@@ -2,15 +2,15 @@
 TIS3IL – University Project (Deadline: 31.12.)
 
 # Team
-**Last Destination - this project will end us all**
+**World Wide Weather**
 
 Nr of Members: 3
 
-**CB** - preprocessing, baseline, statsmodels
+**CB** - preprocessing, baseline, statsmodels, final doc file
 
-**AS** - ml-models, visualizations
+**AS** - ml-models, final best models file, visualizations
 
-**SK** - neural-models, errors, splitting
+**SK** - github repo setup, helper functions, neural-models, slides
 
 ---
 
@@ -24,7 +24,41 @@ The project includes:
 
 - Data ingestion from Meteostat (daily CSV files)
 - Preprocessing & feature engineering
-- Multiple forecasting model families, which are not yet fixed. 
+- Multiple forecasting model families:
+  - Baseline:
+    - Naïve
+    - Historic Average
+    - Seasonal Naïve
+    - Random Walk with Drift
+    - Structural (local trend)
+  - Statistical:
+    - Simple Exponential Smoothing (SES)
+    - Holt Linear Trend
+    - Holt-Winters Seasonal
+    - Autoregressive (AR)
+    - Moving Average (MA)
+    - ARIMA
+  - Machine Learning:
+    - Linear
+    - Ridge
+    - Huber
+    - Tweedie
+    - KNN
+    - Radius Neighbours
+    - Decision Tree
+    - Random Forest
+    - HistGB
+    - LightGBM
+    - XGBoost
+    - XGBoost Random Forest
+    - Support Vector Regression
+    - MLP Regressor
+  - Neural: 
+    - LSTM
+    - NBEATS
+    - NHITS
+    - **GRU** => model which over all models performed best for our use case
+    - RNN
 - Full evaluation on a proper train/validation/test split
 - Visualizations & business-style interpretation
 - Structured documentation
@@ -39,37 +73,17 @@ TIS3IL-WS25-PROJECT
 ├── .venv/
 │
 ├── code/
-│   ├── 01-data-prep.ipynb
-│   ├── 02-baseline.ipynb
-│   ├── 02-ml-models.ipynb
-│   ├── 02-neural-models.ipynb
-│   ├── 02-stats-models.ipynb
-│   ├── 03-visualization.ipynb
-│   ├── metrics.ipynb
-│   ├── splitting.ipynb
-│   └── test.ipynb
 │
 ├── data/
 │   ├── models/
-│   │   ├── baseline_results.csv
-│   │   ├── ml_models_results.csv
-│   │   ├── neural_models_results.csv
-│   │   └── statsmodels_results.csv
 │   │
 │   └── processed/
-│       └── data.csv
 │
 ├── docs/
 │   ├── reports/
 │   │   ├── presentation/
-│   │   │   └── slides.pptx
-│   │   ├── doc_models.md
-│   │   ├── doc_preprocessing.md
-│   │   ├── doc_visualizations.md
-│   │   └── summary.md
 │   │
 │   └── visualizations/
-│       └── placeholder.txt
 │
 ├── .gitignore
 ├── .python-version
