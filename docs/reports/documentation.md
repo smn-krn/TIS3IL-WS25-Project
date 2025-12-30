@@ -15,8 +15,8 @@ Develop a robust, reproducible pipeline to forecast daily average temperature (`
 
 ## **2. Data Engineering and Preparation**
 
-**Data Source:** Meteostat Bulk API (central Michigan), 1980–2025, includes temperature, precipitation, snow, wind, pressure, and sunshine.
-**Processing:** Station aggregation → daily series → missing values imputed via climatology → cleaned dataset saved as `processed_weather_data_michigan.csv`.
+**Data Source:** Meteostat Bulk API (central Michigan), 1980–2025, includes temperature, precipitation, snow, wind, pressure, and sunshine.  
+**Processing:** Station aggregation → daily series → missing values imputed via climatology → cleaned dataset saved as `processed_weather_data_michigan.csv`  
 **Split:**
 
 * Training: 1980–2015
@@ -51,7 +51,7 @@ Shared splitting function ensures reproducibility across notebooks.
 
 ## **5. Evaluation and Model Selection**
 
-**Metrics:** MAE, RMSE, MAPE (interpreted cautiously)
+**Metrics:** MAE, RMSE, MAPE (interpreted cautiously)  
 **Findings:**
 
 * Baselines perform poorly long-term
@@ -285,7 +285,7 @@ Key findings:
 
 ## **7. Top Models Visualization and Comparative Analysis**
 
-To complement the numerical evaluation, the [visualization notebool](../../code/03-visualization.ipynb) is used to visually compare the best-performing model from each model family:
+To complement the numerical evaluation, the [visualization notebook](../../code/03-visualization.ipynb) is used to visually compare the best-performing model from each model family:
 
 
 Three main plots:
@@ -338,10 +338,9 @@ The full historical temperature series provides a contextual baseline for evalua
 * slightly increasing variance in recent decades
 * occasional extreme events (heatwaves, cold periods)
 
-Top models are overlaid on this series to examine long-term trend adherence and seasonal pattern alignment. The GRU model closely follows seasonal cycles without smoothing critical variations, whereas baseline and statistical models may lag or underrepresent extremes.
+Top models are overlaid on this series in the following plots to examine long-term trend adherence and seasonal pattern alignment. The GRU model closely follows seasonal cycles without smoothing critical variations, whereas baseline and statistical models may lag or underrepresent extremes.
 
-![alt text](../visualizations/final_documentation_plots/image-1.png)
-
+![alt text](../visualizations/final_documentation_plots/image_final.png)
 
 #### **7.2.2 Validation Period Comparison (2016–2020)**
 
@@ -352,7 +351,7 @@ This plot overlays the actual observed temperatures with forecasts from each top
 * **MLP:** reacts faster to short-term deviations but can show minor overfitting in sharp transitions.
 * **Neural: GRU:** closest alignment with actual temperatures, minimal lag - preserves amplitude of seasonal extremes
 
-![alt text](../visualizations/final_documentation_plots/image-3.png)
+![alt text](../visualizations/final_documentation_plots/image1_final.png)
 
 #### **7.2.3 Test Period Comparison (2021–2025)**
 
@@ -365,7 +364,7 @@ The test period visualizations reveal true out-of-sample performance:
 
 These plots demonstrate that GRU outperforms all other approaches not just in MAE/RMSE but also in realistic temporal behavior, a critical requirement for energy and operational planning.
 
-![alt text](../visualizations/final_documentation_plots/image-4.png)
+![alt text](../visualizations/final_documentation_plots/image2_final.png)
 
 ---
 
@@ -386,5 +385,5 @@ The final forecast is produced by:
 3. visualizing predictions alongside historical observations
 
 
-![alt text](../visualizations/final_documentation_plots/image-5.png)
+![alt text](../visualizations/final_documentation_plots/image3_final.png)
 ---
