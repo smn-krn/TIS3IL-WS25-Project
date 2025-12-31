@@ -37,7 +37,6 @@ Shared splitting function ensures reproducibility across notebooks.
 
 ## **4. Model Training**
 
-## 4. Model Training
 
 | Category | Models / Methods |
 |----------|------------------|
