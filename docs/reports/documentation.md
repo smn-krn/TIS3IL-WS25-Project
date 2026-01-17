@@ -339,7 +339,7 @@ The full historical temperature series provides a contextual baseline for evalua
 
 Top models are overlaid on this series in the following plots to examine long-term trend adherence and seasonal pattern alignment. The GRU model closely follows seasonal cycles without smoothing critical variations, whereas baseline and statistical models may lag or underrepresent extremes.
 
-![alt text](../visualizations/final_documentation_plots/image_final.png)
+![alt text](../visualizations/final_documentation_plots/FullDataWithSplits_final.png)
 
 #### **7.2.2 Validation Period Comparison (2016–2020)**
 
@@ -350,7 +350,7 @@ This plot overlays the actual observed temperatures with forecasts from each top
 * **MLP:** reacts faster to short-term deviations but can show minor overfitting in sharp transitions.
 * **Neural: GRU:** closest alignment with actual temperatures, minimal lag - preserves amplitude of seasonal extremes
 
-![alt text](../visualizations/final_documentation_plots/image1_final.png)
+![alt text](../visualizations/final_documentation_plots/ValidationPeriod_final.png)
 
 #### **7.2.3 Test Period Comparison (2021–2025)**
 
@@ -363,7 +363,7 @@ The test period visualizations reveal true out-of-sample performance:
 
 These plots demonstrate that GRU outperforms all other approaches not just in MAE/RMSE but also in realistic temporal behavior, a critical requirement for energy and operational planning.
 
-![alt text](../visualizations/final_documentation_plots/image2_final.png)
+![alt text](../visualizations/final_documentation_plots/TestPeriod_final.png)
 
 ---
 
@@ -384,5 +384,5 @@ The final forecast is produced by:
 3. visualizing predictions alongside historical observations
 
 
-![alt text](../visualizations/final_documentation_plots/image3_final.png)
+![alt text](../visualizations/final_documentation_plots/FINAL_Prediction_Dec_Jan.png)
 ---
