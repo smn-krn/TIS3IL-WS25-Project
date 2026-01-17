@@ -172,32 +172,28 @@ def Plot(data, category, Title):
 
 **Temperature** <br>
 ***Average*** <br>
-<img src="image.png" alt="alt text" width="400">
+![image.png](presentation/AverageTemperature.png)
 
 - shows missing data for the years 1981 to 1983 and 1986 to 1988
 
 ***Maximum*** <br>
-<img src="image-1.png" alt="alt text" width="400">
+![](../visualizations/preprocessing_documentation_plots/MaxDailyTemp.png)
 
 - shows no missing data
 
 ***Minimum*** <br>
-<img src="image-2.png" alt="alt text" width="400">
+![alt text](../visualizations/preprocessing_documentation_plots/MinDailyTemp.png)
 
 - shows no missing data
 
 **Precipitation** <br>
-<img src="image-3.png" alt="alt text" width="400">
+![alt text](../visualizations/preprocessing_documentation_plots/Precipitation.png)
 
 - shows no missing data
 
-**Precipitation** <br>
-<img src="image-4.png" alt="alt text" width="400">
-
-- shows missing data between 1981 and 1984
 
 **Wind Peak Gust** <br>
-<img src="image-5.png" alt="alt text" width="400">
+![alt text](../visualizations/preprocessing_documentation_plots/WindPeakGust.png)
 
 - shows missing data from 1996 to the present
 
@@ -205,17 +201,17 @@ def Plot(data, category, Title):
 - no plot as there is no data available for this column
 
 **Sea Level Air Pressure** <br>
-<img src="image-6.png" alt="alt text" width="400">
+![alt text](../visualizations/preprocessing_documentation_plots/SeaLevelAirPressure.png)
 
 - shows missing data from 1981 to 1996
 
 **Snow Depth** <br>
-<img src="image-7.png" alt="alt text" width="400">
+![alt text](../visualizations/preprocessing_documentation_plots/SnowDepth.png)
 
 - shows missing data from 1997 to 2000 and from 2005 to 2006 during winter
 
 **Sunshine Duration** <br>
-<img src="image-8.png" alt="alt text" width="400">
+![alt text](../visualizations/preprocessing_documentation_plots/SunshineDuration.png)
 
 - shows consistently missing data except for the period from 2000 to 2005
 
@@ -257,7 +253,7 @@ Plot(data_clear, 'tavg', 'Average Temperature (°C) after Cleaning')
 - ensures numeric dtype using pd.to_numeric
 - Plot() visualizes the cleaned average temperature series and acts as a sanity check
 
-<img src="image-9.png" alt="alt text" width="400">
+![alt text](../visualizations/preprocessing_documentation_plots/AverageTemperature_preprocessed.png)
 
 - Now the plot displays a time series of average temperature, which appears reasonable and can be used for further analysis.
 
@@ -311,7 +307,7 @@ Plot(data_clear, 'pres', 'Sea-Level Air Pressure (hPa)')
 - smoothed with 30-day rolling mean to reduce daily noise
 - Plot(): acts as sanity check
 
-<img src="image-10.png" alt="alt text" width="400">
+![alt text](../visualizations/preprocessing_documentation_plots/SeaLevelAirPressure_preprocessed.png)
 
 - Although the plot covers the entire timeframe without any missing data, the results are not meaningful.
 
@@ -354,7 +350,7 @@ Plot(data_clear, "wspd", "Wind Speed (km/h) — Reconstructed")
 - train contains rows with available wind speed, test rows with missing values
 - predictions replace missing values, then smoothed using a 3-day rolling average
 
-<img src="image-11.png" alt="alt text" width="400">
+![alt text](../visualizations/preprocessing_documentation_plots/WindSpeed_preprocessed.png)
 
 - Now the plot displays a time series of wind speed, which appears reasonable and can be used for further analysis.
 
@@ -394,7 +390,7 @@ Plot(data_clear, 'snow', 'Snow Depth (cm)')
 - imputed using climatology of valid years, filling missing ranges
 - smoothed with a 7-day rolling average for continuity
 
-<img src="image-12.png" alt="alt text" width="400">
+![alt text](../visualizations/preprocessing_documentation_plots/SnowDepth_preprocessed.png)
 
 - Now the plot displays a time series of snow depth, which appears reasonable and can be used for further analysis.
 
